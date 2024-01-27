@@ -48,26 +48,19 @@ public class PigLatin {
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
 	    int firstVowelIndex = findFirstVowel(sWord);
-    
-    if (firstVowelIndex == -1)
-    {
+
+    if (firstVowelIndex == -1) {
         return sWord + "ay";
-    }
-    else if (firstVowelIndex == 0)
-    {
+    } else if (firstVowelIndex == 0) {
         return sWord + "way";
-    }
-    else 
-    {
+    } else {
         String beginningConsonants = sWord.substring(0, firstVowelIndex);
         String restOfWord = sWord.substring(firstVowelIndex);
-        
+
         // For words starting with "qu"
         if (sWord.substring(0, 2).equalsIgnoreCase("qu")) {
-            return restOfWord + beginningConsonants + "ay";
-        } 
-        else 
-        {
+            return restOfWord.substring(1) + beginningConsonants + "quay";
+        } else {
             return restOfWord + beginningConsonants + "ay";
         }
     }
