@@ -63,8 +63,7 @@ public class PigLatin {
         String restOfWord = sWord.substring(firstVowelIndex);
         
         // For words starting with "qu"
-        if (beginningConsonants.toLowerCase().equals("qu")) 
-        {
+        if (sWord.substring(0, 2).equalsIgnoreCase("qu")) {
             return restOfWord + beginningConsonants + "ay";
         } 
         else 
