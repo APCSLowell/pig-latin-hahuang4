@@ -53,16 +53,11 @@ public class PigLatin {
         return sWord + "ay";
     } else if (firstVowelIndex == 0) {
         return sWord + "way";
-    } else {
-        String beginningConsonants = sWord.substring(0, firstVowelIndex);
-        String restOfWord = sWord.substring(firstVowelIndex);
-
-        // For words starting with "qu"
-        if (sWord.substring(0, 2).equals("qu")) {
-            return restOfWord.substring(1) + "ay";
+    } else if(sWord.substring(0, 2).equals("qu")) {
+            return sWord.substring(2)+ sWord.substring(0,2)+ "ay";
         } else {
-            return restOfWord + beginningConsonants + "ay";
+            return sWord.substring(firstVowelIndex)+(sWord.substring(0, firstVowel(Index))+"ay";
         }
     }
-    }
+    
 }//end PigLatin class
